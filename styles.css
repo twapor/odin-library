@@ -10,8 +10,9 @@ body {
 }
 
 #wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 5fr;
     align-items: center;
 }
 
@@ -116,7 +117,7 @@ input::-webkit-inner-spin-button {
 }
 
 #submit-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: all 600ms;
     box-shadow: rgba(0, 0, 0, 0.452) 0px 5px 15px;
 }
@@ -124,6 +125,12 @@ input::-webkit-inner-spin-button {
 #submit-btn:active {
         color: var(--cta);
         background-color: #fff;
+}
+
+#control {
+    grid-area: 1 / 2 / 2 / 3;
+    align-self: center;
+    justify-self: center;
 }
 
 #add-new-book {
@@ -146,5 +153,86 @@ input::-webkit-inner-spin-button {
 #add-new-book:active {
     color: var(--cta);
     background-color: #fff;
+}
+
+#book-container {
+    margin: 5em;
+    grid-area: 2 / 1 / 4 / 3;
+    display: flex;
+    gap: 5em;
+}
+
+.book-card {
+    background-color: var(--secondarybg);
+    height: 15em;
+    width: 10em;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    font-family: sans-serif;
+    justify-content: space-around;
+    text-align: center;
+    border-radius: 1em;
+    box-shadow: rgba(255, 255, 255, 0.11) 0px 5px 15px;
+}
+
+.book-card h3 {
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.book-card p {
+    margin: 0.5em 0;
+}
+
+.book-card button {
+    font-family: sans-serif;
+}
+
+.book-card button:hover {
+    transform: scale(1.05);
+    transition: all 400ms;
+}
+
+.read-btn {
+    border-radius: 0.8em;
+    background-color: #057a57;
+    border: none;
+    padding: 1em 2em;
+    color: #fff;
+    font-weight: bold;
+}
+
+.read-btn:hover {
+    background-color: #035039;
+}
+
+.not-read-btn {
+    border-radius: 0.8em;
+    background-color: #580303;
+    border: none;
+    padding: 1em 2em;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.not-read-btn:hover {
+    background-color: #460000;
+}
+
+.clear-btn {
+    border-radius: 0.8em;
+    background-color: #ffffff00;
+    border: 0.1em solid #fff;
+    padding: 1em 2em;
+    color: #fff;
+}
+
+.clear-btn:hover {
+    background-color: #fff;
+    color: var(--secondarybg);
+    font-weight: bold;
 }
 
