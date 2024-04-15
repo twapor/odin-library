@@ -14,6 +14,66 @@ body {
     align-items: center;
 }
 
+#add-book-modal {
+    border-radius: 1em;
+    box-shadow: rgba(255, 255, 255, 0.11) 0px 5px 15px;
+    height: 30em;
+    width: 20em;
+}
+
+form {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 2em
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    font-weight: bold;
+}
+
+form div:nth-of-type(4) {
+    flex-direction: row;
+    align-items: center;
+    font-weight: normal;
+}
+
+input {
+    border: none;
+    height: 1.8em;
+    border-bottom: 0.2em solid gray;
+}
+
+input {
+
+}
+
+
+#submit-btn {
+    border: none;
+    border-radius: 0.8em;
+    background-color: var(--cta);
+    color: #fff;
+    padding: 1em 2em;
+    font-family: sans-serif;
+    font-weight: bold;
+
+}
+
+#submit-btn:hover {
+    transform: scale(1.1);
+    transition: all 600ms;
+    box-shadow: rgba(0, 0, 0, 0.452) 0px 5px 15px;
+}
+
+#submit-btn:active {
+        color: var(--cta);
+        background-color: #fff;
+}
+
 #add-new-book {
     background-color: var(--cta);
     color: #fff;
@@ -23,5 +83,16 @@ body {
     margin-top: 2em;
     font-family: sans-serif;
     font-weight: bold;
-
 }
+
+#add-new-book:hover {
+    transform: scale(1.1);
+    transition: all 600ms;
+    box-shadow: rgba(255, 255, 255, 0.11) 0px 5px 15px;
+}
+
+#add-new-book:active {
+    color: var(--cta);
+    background-color: #fff;
+}
+

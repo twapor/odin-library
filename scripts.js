@@ -1,14 +1,21 @@
+const dialogBox =document.querySelector("#add-book-modal");
+const addNewBook = document.querySelector("#add-new-book");
+addNewBook.addEventListener("click", () => {
+    dialogBox.showModal();
+});
+
+
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, isRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.isRead = isRead;
 }
 
 Book.prototype.info = function () {
-    if(read) {
+    if(isRead) {
         return `${title} by ${author}, ${pages} pages, read!`
     }
     else {
