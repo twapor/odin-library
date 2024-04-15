@@ -25,6 +25,8 @@ const submitBtn = document.querySelector('#submit-btn');
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
     addBookToLibrary();
+    refreshLibrary();
+    createLibrary();
     
 });
 
@@ -81,4 +83,54 @@ function addBookToLibrary() {
         createNewBook();
         clearInput();
     }
+}
+
+const bookCardContainer = document.querySelector('#book-container');
+
+function createBookCard(book) {
+    const bookCard = document.createElement('div');
+    const title = document.createElement('h3');
+    const author = document.createElement('p');
+    const pages = document.createElement('p');
+    const readBtn = document.createElement('button');
+    const clearBtn = document.createElement('button');
+
+    bookCard.classList.add('book-card');
+    clearBtn.classList.add('clear-btn');
+    
+    title.textContent = `"${book.title}"`;
+    author.textContent = `by ${book.author}`;
+    pages.textContent = `${book.pages} pages`
+    clearBtn.textContent = 'Remove';
+
+    if(book.isRead) {
+        readBtn.classList.add('read-btn');
+        readBtn.textContent = 'Read';
+    }
+
+    else {
+        readBtn.classList.add('not-read-btn');
+        readBtn.textContent = 'Not Read';
+    }
+
+    bookCardContainer.appendChild(bookCard);
+    bookCard.appendChild(title);
+    bookCard.appendChild(author);
+    bookCard.appendChild(pages);
+    bookCard.appendChild(readBtn);
+    bookCard.appendChild(clearBtn);
+}
+
+function createLibrary() {
+    
+    myLibrary.forEach((book) => {
+        createBookCard(book);
+    })
+}
+
+function refreshLibrary(){
+    const allBookCards = document.querySelectorAll('.book-card');
+    allBookCards.forEach((element) => {
+        element.remove();
+    });
 }
