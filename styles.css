@@ -77,6 +77,8 @@ input {
     height: 1.8em;
     border-bottom: 0.2em solid #fff;
     background-color: #1F2937;
+    color: #fff;
+    font-family: sans-serif;
 }
 
 input::placeholder {
