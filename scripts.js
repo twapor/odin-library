@@ -87,13 +87,18 @@ function addBookToLibrary() {
 
 const bookCardContainer = document.querySelector('#book-container');
 
-function createBookCard(book) {
+function createBookCard(book, index) {
     const bookCard = document.createElement('div');
     const title = document.createElement('h3');
     const author = document.createElement('p');
     const pages = document.createElement('p');
     const readBtn = document.createElement('button');
     const clearBtn = document.createElement('button');
+
+    clearBtn.addEventListener('click', () => {
+        bookCard.remove();
+        myLibrary.splice(index, 1);
+    });
 
     bookCard.classList.add('book-card');
     clearBtn.classList.add('clear-btn');
@@ -113,6 +118,19 @@ function createBookCard(book) {
         readBtn.textContent = 'Not Read';
     }
 
+    readBtn.addEventListener('click', () => {
+        if(readBtn.textContent == 'Read'){
+            readBtn.classList.remove('read-btn');
+            readBtn.classList.add('not-read-btn');
+            readBtn.textContent = 'Not Read';
+        }
+        else {
+            readBtn.classList.remove('not-read-btn');
+            readBtn.classList.add('read-btn');
+            readBtn.textContent = 'Read';
+        }
+    });
+
     bookCardContainer.appendChild(bookCard);
     bookCard.appendChild(title);
     bookCard.appendChild(author);
@@ -123,8 +141,8 @@ function createBookCard(book) {
 
 function createLibrary() {
     
-    myLibrary.forEach((book) => {
-        createBookCard(book);
+    myLibrary.forEach((book, index) => {
+        createBookCard(book, index);
     })
 }
 
