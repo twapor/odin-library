@@ -1,9 +1,21 @@
-const dialogBox =document.querySelector("#add-book-modal");
+const dialogBox = document.querySelector('#add-book-modal');
+dialogBox.addEventListener('click', (event) => {
+    console.log(event.target);
+    if(event.target == dialogBox) {
+        dialogBox.close();
+    }
+});
+
 const addNewBook = document.querySelector("#add-new-book");
-addNewBook.addEventListener("click", () => {
+
+addNewBook.addEventListener('click', () => {
     dialogBox.showModal();
 });
 
+const closeModal = document.querySelector('#close-modal');
+closeModal.addEventListener('click', () => {
+    dialogBox.close();
+});
 
 const myLibrary = [];
 

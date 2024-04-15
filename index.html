@@ -9,26 +9,29 @@
 <body>
     <div id="wrapper">
         <dialog id="add-book-modal">
-            <form id="add-book-form">
+            <div id="modal-container">
+                <button type="button" id="close-modal">x</button>
                 <h3>Add a new book</h3>
-                <div>
-                    <label for="title">Title</label>
-                    <input id="title" name="title" type="text" required maxlength="100" placeholder="Title">
-                </div>
-                <div>
-                    <label for="author">Author</label>
-                    <input id="author" name="author" type="text" required maxlength="100" placeholder="Author">
-                </div>
-                <div>
-                    <label for="pages">Pages</label>
-                    <input id="pages" name="pages" type="number" required placeholder="250">
-                </div>
-                <div>
-                    <label for="isRead">Have you read it?</label>
-                    <input type="checkbox" id="isRead" name="isRead">
-                </div>
-                <button type="submit" id="submit-btn">Submit</button>
-            </form>
+                <form id="add-book-form">
+                    <div>
+                        <label for="title">Title</label>
+                        <input id="title" name="title" type="text" required maxlength="100" placeholder="Title">
+                    </div>
+                    <div>
+                        <label for="author">Author</label>
+                        <input id="author" name="author" type="text" required maxlength="100" placeholder="Author">
+                    </div>
+                    <div>
+                        <label for="pages">Pages</label>
+                        <input id="pages" name="pages" type="number" required placeholder="250">
+                    </div>
+                    <div>
+                        <label for="isRead">Have you read it?</label>
+                        <input type="checkbox" id="isRead" name="isRead">
+                    </div>
+                    <button type="submit" id="submit-btn">Submit</button>
+                </form>
+            </div>
         </dialog>
         <div id="control">
             <button type="button" id="add-new-book">Add New Book</button>
